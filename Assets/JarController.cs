@@ -6,12 +6,6 @@ public class JarController : MonoBehaviour
 {
     public float jarSpeed = 1f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Instantiate Jars randomly
-    }
-
     // Update is called once per frame
     void Update()
     {
