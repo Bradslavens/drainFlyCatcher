@@ -1,10 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JarController : MonoBehaviour
 {
     public float jarSpeed = 1f;
+
+    public Text scoreText;
+
+    private int score = 0;
+
+    private void Start() {
+        scoreText.text  = "Score: 0";
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,6 +38,10 @@ public class JarController : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.tag == "Fly"){
             Destroy(other.gameObject);
+
+            // add fly to UI
+            score++;
+            scoreText.text = "Score: " + score;
         }
     }
 
